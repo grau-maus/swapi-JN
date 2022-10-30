@@ -12,7 +12,8 @@ export const setPerson = (listPerson) => {
 
 //========= thunk action creators=========
 
-export const getPerson = (personNumber) => async (dispatch) => {
+export const getPerson = () => async (dispatch) => {
+  const personNumber = Math.random(50);
   const response = await fetch(
     `http https://swapi.dev/api/people/${personNumber}`
   );
