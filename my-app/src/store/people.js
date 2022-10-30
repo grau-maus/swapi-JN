@@ -23,3 +23,21 @@ export const getPerson = (personNumber) => async (dispatch) => {
     dispatch(setPerson(person));
   } else return response.json();
 };
+
+//============ reducer================
+const initialState = {
+  person: null,
+  loaded: false,
+};
+
+const peopleReducer = (peopleState = initialState, action) => {
+  switch (action.type) {
+    case SET_PERSON:
+      const person = action.payload;
+      return { ...person, loaded: true };
+    default:
+      return peopleState;
+  }
+};
+
+export default peopleReducer;
