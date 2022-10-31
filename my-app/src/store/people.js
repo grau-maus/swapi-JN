@@ -14,9 +14,7 @@ export const setPerson = (listPerson) => {
 
 export const getPerson = () => async (dispatch) => {
   const personNumber = Math.random(50);
-  const response = await fetch(
-    `http https://swapi.dev/api/people/${personNumber}`
-  );
+  const response = await fetch(`https://swapi.dev/api/people/${personNumber}`);
   if (response.ok) {
     const { message } = await response.json();
     const person = Object.keys(message);
