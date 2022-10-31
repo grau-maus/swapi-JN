@@ -24,7 +24,7 @@ export const getPerson = () => async (dispatch) => {
 
 //============ reducer================
 const initialState = {
-  person: null,
+  person: {},
   loaded: false,
 };
 
@@ -32,7 +32,7 @@ const peopleReducer = (peopleState = initialState, action) => {
   switch (action.type) {
     case SET_PERSON:
       const person = action.payload;
-      return { ...person, loaded: true };
+      return { person, loaded: true };
     default:
       return peopleState;
   }
