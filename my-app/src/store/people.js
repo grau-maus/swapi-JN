@@ -18,7 +18,6 @@ export const getPerson = () => async (dispatch) => {
   const response = await fetch(`https://swapi.dev/api/people/${personNumber}/`);
   if (response.ok) {
     const message = await response.json();
-    console.log(message);
     dispatch(setPerson(message));
   } else return response.json();
 };
