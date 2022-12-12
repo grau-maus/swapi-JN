@@ -1,14 +1,10 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 import peopleReducer from "./people";
-import thunk from "redux-thunk";
 
-const rootReducer = combineReducers({
-  people: peopleReducer,
+const store = configureStore({
+    reducer: {
+      people: peopleReducer
+    },
 });
 
-const enhancer = applyMiddleware(thunk);
-
-const configureStore = (preloadedState) =>
-  createStore(rootReducer, preloadedState, enhancer);
-
-export default configureStore;
+export default store;

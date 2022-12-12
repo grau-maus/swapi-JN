@@ -1,3 +1,8 @@
+* {
+  background-color: #282c34;
+  color: white;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +40,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.text-link {
+  cursor: pointer;
+  user-select: none;
+}
+
+.text-link:hover {
+  color: rgba(255, 255, 255, 0.623);
 }
